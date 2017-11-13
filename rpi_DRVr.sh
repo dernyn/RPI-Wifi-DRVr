@@ -5,9 +5,11 @@
 #  https://twitter.com/d_e_r_n_y_n
 #  11/11/2017
 
-echo RPI-Wifi-DRVr:
-sudo JUST_CHECK=1 rpi-update>/dev/null
-echo "This script is a fix so that you dont have to compile the whole Raspbian Linux kernel on this machine, just for the purpose of installing a driver,such as USB Wifi card Driver/etc."
+echo RPI-Wifi-DRVr:`sudo JUST_CHECK=1 rpi-update>/dev/null`
+echo "This script is a fix so that you dont have to compile the whole Raspbian Linux kernel on this very machine;"
+echo "which is the other solution for the purpose of installing a kernel driver/build modules, such as a USB Wifi card Driver/etc."
+echo "the minimalistic Raspbian Image does not include it's source code, linux headers for make(GCC,CPP) and a repository for drivers."
+echo "these headers are not distribute/compiled by me, but enjoy building your own modules and kernel drivers without wasting valuable time."
 echo ""
 sleep 10
 echo "Installing 2 required items for the script...."
@@ -16,7 +18,7 @@ echo ""
 sudo apt-get install -y bc dkms
 echo ""
 echo ""
-sleep 10
+sleep 7
 echo "Updating your repository urls and distro packages"
 echo ""
 echo ""
@@ -29,7 +31,7 @@ echo "Now the hard part.. Updating to the latest Raspbian Kernel version availab
 echo "Your current kernel version : "`uname -r``echo "     CPU_Architecture : "``uname -m`
 echo "Installed Raspbian Version hash : "`vcgencmd version`
 echo ""
-echo "Latest Version : "`curl -s https://github.com/Hexxenh/rpi-firmware/commit/$(cat /boot/.firmware_revision)|grep '<title>'`sleep 6`|cut -b26-30`
+echo "Latest Version : "`curl -s https://github.com/Hexxenh/rpi-firmware/commit/$(cat /boot/.firmware_revision)|grep '<title>'`sleep 6`|cut -b26-30
 echo ""
 echo ""
 echo "!!!Be aware of the CPU architecture and the kernel version for each, it varies between Raspberry Pi types/versions(i.e RPI 0/1/2/3)!"
