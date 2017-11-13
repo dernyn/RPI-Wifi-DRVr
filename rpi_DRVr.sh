@@ -25,7 +25,14 @@ echo ""
 sleep 20
 echo -n "Now the hard part Updating to the latest Raspbian Kernel version available."
 echo -n "Your current kernel version : "`uname -r``echo -e "     Proc_Architecture : "``uname -m`
-echo -n "Version hash : "`vcgencmd version`
+echo -n "Installed Version hash : "`vcgencmd version`
+echo ""
+sudo JUST_CHECK=1 rpi-update>/dev/null
+echo -n "Latest Version : "
+curl -s https://github.com/Hexxenh/rpi-firmware/commit/$(cat /boot/.firmware_revision)|grep '<title>Kernel: Bump to'|cut
+sleep 40
+echo ""
+echo ""
 echo -n "be aware of the architecture and the kernel version, it varies between Raspberry Pi types/versions(i.e RPI 0/1/2/3)!!!!!!"
 echo -n "RPI single cores are armv61 and the quad core and others are armv71, and they use different kernel versions"
 echo -n "if you place this SD-card on a single core after running this script on a quad core; the wifi driver will not start!"
@@ -59,36 +66,3 @@ echo ""
 echo -n "Installing kernel header packages..."
 echo ""
 echo ""
-sleep 10
-sudo dpkg -i linux-headers-`uname -r`_`uname -r``echo 2d325f61726d68662e646562|xxd -r -p`
-sleep 25
-echo ""
-echo ""
-echo -n "Adding minor changes to avoid error prompts from make..."
-echo ""
-echo ""
-echo ""
-cd /usr/src/linux-headers-$(uname -r)/arch
-sleep 50
-sudo ln -s arm armv6l
-sudo ln -s arm armv7l
-echo ""
-echo ""
-echo ""
-echo -n "Kernel Headers Installed."
-echo ""
-echo ""
-sleep 10
-echo -n "System is Ready...now go find that linux driver for that non-supported Raspberry Pi Wifi Card/etc."
-echo ""
-echo ""
-sleep 60
-echo -n "------MORE INFORMATION : "
-echo -n "Have a rtl8812au chipset in that wifi card..."
-echo -n "Some driver packages have been setup to detect the proccessor(within the Makefile), by just typing (make) but to avoid conflict and errors with make just follow the guide below..."
-echo -n "Go to the path of your downloaded driver and type either (make ARCH=arm) (make ARCH=armv61) or (make ARCH=armv71)"
-echo ""
-echo ""
-sleep 5
-echo -n "Once completed just type (make install ARCH=arm) or (armv61/armv71)"
-echo -n "Script is Done."
