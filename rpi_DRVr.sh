@@ -29,7 +29,7 @@ echo -n "Installed Version hash : "`vcgencmd version`
 echo ""
 sudo JUST_CHECK=1 rpi-update>/dev/null
 echo -n "Latest Version : "
-curl -s https://github.com/Hexxenh/rpi-firmware/commit/$(cat /boot/.firmware_revision)|grep '<title>Kernel: Bump to'|cut
+curl -s https://github.com/Hexxenh/rpi-firmware/commit/$(cat /boot/.firmware_revision)|grep '<title>Kernel: Bump to'|cut -b24-30
 sleep 40
 echo ""
 echo ""
