@@ -5,6 +5,7 @@
 #  https://twitter.com/d_e_r_n_y_n
 #  11/11/2017
 
+echo RPI-Wifi-DRVr
 sudo JUST_CHECK=1 rpi-update>/dev/null
 echo "This script is a fix so that you dont have to compile the whole Raspbian Linux kernel on this machine, just for the purpose of installing a driver,such as USB Wifi card Driver/etc."
 echo ""
@@ -23,31 +24,31 @@ sudo apt-get update && sudo apt-get upgrade
 echo ""
 echo ""
 echo ""
-sleep 20
+sleep 10
 echo "Now the hard part.. Updating to the latest Raspbian Kernel version available."
-echo "Your current kernel version : "`uname -r``echo -e "     CPU_Architecture : "``uname -m`
+echo "Your current kernel version : "`uname -r``echo "     CPU_Architecture : "``uname -m`
 echo "Installed Raspbian Version hash : "`vcgencmd version`
 echo ""
 echo "Latest Version : "`curl -s https://github.com/Hexxenh/rpi-firmware/commit/$(cat /boot/.firmware_revision)|grep '<title>Kernel: Bump to'|cut -b24-30`
-sleep 40
 echo ""
 echo ""
 echo "!!!Be aware of the CPU architecture and the kernel version for each, it varies between Raspberry Pi types/versions(i.e RPI 0/1/2/3)!"
-echo "RPI single cores are [armv61] and the quad core and others are [armv71], they use different kernel versions within Raspbian."
+echo "RPI single cores are [armv61] and the quad core and others are [armv71], they use different kernel versions within Raspbian for each."
 echo "if you placed this SD-card on a single core RPI after running this script on a quad core RPI; the wifi driver will not start!"
-echo "simply run this script on the single core RPI or vise versa if it was a quad core RPI originally, No harm done, just be aware onto why it happen and didn't work"
+echo "simply run this script on the single core RPI or vise versa if it was a quad core RPI originally, No harm done, just be aware onto why it happen and why it failed"
 echo ""
 echo ""
-sleep 45
+sleep 35
 sudo rpi-update
-sleep 30
+sleep 10
 echo ""
 echo ""
 echo "You have to Restart your system after this proccess, if it updated the systems firmware in anyway."
 echo "If that's the case Do not worry just re-run this script after the reboot. (all is fine) Stop here by pressing Ctrl + C and type sudo reboot."
 echo ""
 sleep 20
-read -p "Ctrl + C to EXIT or any key to continue... " -n1 -s
+read -p "Ctrl + C to EXIT or any key to continue... " -n 1 -s
+sleep 2
 echo ""
 echo ""
 echo ""
