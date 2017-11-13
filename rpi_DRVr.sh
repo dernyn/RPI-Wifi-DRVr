@@ -5,6 +5,8 @@
 #  https://twitter.com/d_e_r_n_y_n
 #  11/11/2017
 
+echo ""
+echo ""
 echo RPI-Wifi-DRVr:`sudo JUST_CHECK=1 rpi-update>/dev/null`
 echo "This script is a fix so that you dont have to compile the whole Raspbian Linux kernel on this very machine;"
 echo "which is the other solution for the purpose of installing a kernel driver/build modules, such as a USB Wifi card Driver/etc."
@@ -31,7 +33,7 @@ echo "Now the hard part.. Updating to the latest Raspbian Kernel version availab
 echo "Your current kernel version : "`uname -r``echo "     CPU_Architecture : "``uname -m`
 echo "Installed Raspbian Version hash : "`vcgencmd version`
 echo ""
-echo "Latest Version : "`echo $(curl -s https://github.com/Hexxenh/rpi-firmware/commit/$(cat /boot/.firmware_revision)|grep '<title>'|cut -b26-30)`
+echo "Latest Version : "`curl -s https://github.com/Hexxenh/rpi-firmware/commit/$(cat /boot/.firmware_revision)|grep '<title>'|cut -b26-30)>>test.txt`
 echo ""
 echo ""
 echo "!!!Be aware of the CPU architecture and the kernel version for each, it varies between Raspberry Pi types/versions(i.e RPI 0/1/2/3)!"
@@ -49,7 +51,7 @@ echo "You have to Restart your system after this proccess, if it updated the sys
 echo "If that's the case Do not worry just re-run this script after the reboot. (all is fine) Stop here by pressing Ctrl + C and type sudo reboot."
 echo ""
 sleep 20
-read -p 'Ctrl + C to EXIT or any key to continue... ' -n 1 -s
+read -p 'Ctrl + C to EXIT or any key to continue... ' -n1 -s
 sleep 2
 echo ""
 echo ""
@@ -82,7 +84,7 @@ echo "Kernel Headers Installed."
 echo ""
 echo "System is Ready...now go find that linux driver for that non-supported Raspberry Pi Wifi Card/etc."
 echo "rtl8812au seems to be a popular one....."
-echo "Some driver packages have been setup to detect the proccessor(within the Makefile), by just typing (make) but to avoid conflict and errors with make just follow the guide below...
+echo "Some driver packages have been setup to detect the proccessor(within the Makefile), by just typing (make) but to avoid conflict and errors with make just follow the guide below..."
 echo "Go to the path of your downloaded driver and type either (make ARCH=arm) (make ARCH=armv61) or (make ARCH=armv71)"
 echo ""
 echo -n "TO perform the installation type (make install ARCH=arm) or (make install ARCH=armv61/armv71)"
