@@ -31,7 +31,7 @@ echo "Now the hard part.. Updating to the latest Raspbian Kernel version availab
 echo "Your current kernel version : "`uname -r``echo "     CPU_Architecture : "``uname -m`
 echo "Installed Raspbian Version hash : "`vcgencmd version`
 echo ""
-echo "Latest Version : "`curl -s https://github.com/Hexxenh/rpi-firmware/commit/$(cat /boot/.firmware_revision)|grep '<title>'`sleep 6`|cut -b26-30
+echo "Latest Version : "`echo $(curl -s https://github.com/Hexxenh/rpi-firmware/commit/$(cat /boot/.firmware_revision)|grep '<title>'|cut -b26-30)`
 echo ""
 echo ""
 echo "!!!Be aware of the CPU architecture and the kernel version for each, it varies between Raspberry Pi types/versions(i.e RPI 0/1/2/3)!"
