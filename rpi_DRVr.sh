@@ -25,6 +25,7 @@ echo ""
 sleep 20
 echo -n "Now the hard part Updating to the latest Raspbian Kernel version available."
 echo -n "Your current kernel version : "`uname -r``echo -e "     Proc_Architecture : "``uname -m`
+echo -n "Version hash : "`vcgencmd version`
 echo -n "be aware of the architecture and the kernel version, it varies between Raspberry Pi types/versions(i.e RPI 0/1/2/3)!!!!!!"
 echo -n "RPI single cores are armv61 and the quad core and others are armv71, and they use different kernel versions"
 echo -n "if you place this SD-card on a single core after running this script on a quad core; the wifi driver will not start!"
