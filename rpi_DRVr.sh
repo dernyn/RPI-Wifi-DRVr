@@ -55,13 +55,32 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo -e "Wait a minute or two for the downloading proccess"
+echo "Wait a minute or two for the downloading proccess"
 echo ""
 sleep 5
 # downloading your current kernel headers
 curl $(echo  68747470733A2F2F7777772E6E696B73756C612E6875742E66692F7E6D686969656E6B612F5270692F6C696E75782D686561646572732D7270692F6C696E75782D686561646572732D|xxd -r -p)`uname -r`_`uname -r``echo 2d325f61726d68662e646562|xxd -r -p` -O
 sleep 30
 echo ""
-echo -e "Installing kernel header packages..."
+echo "Installing kernel header packages..."
 echo ""
 echo ""
+sudo dpkg -i linux-headers-`uname -r`_`uname -r``echo 2d325f61726d68662e646562|xxd -r -p`
+echo ""
+echo "Adding minor changes to avoid error prompts from make..."
+cd /usr/src/linux-headers-$(uname -r)/arch
+sleep 20
+sudo ln -s arm armv6l
+sleep 10
+sudo ln -s arm armv7l
+sleep 10
+echo ""
+echo "Kernel Headers Installed."
+echo ""
+echo "System is Ready...now go find that linux driver for that non-supported Raspberry Pi Wifi Card/etc."
+echo "rtl8812au seems to be a popular one....."
+echo "Some driver packages have been setup to detect the proccessor(within the Makefile), by just typing (make) but to avoid conflict and errors with make just follow the guide below...
+echo "Go to the path of your downloaded driver and type either (make ARCH=arm) (make ARCH=armv61) or (make ARCH=armv71)"
+echo ""
+echo -n "TO perform the installation type (make install ARCH=arm) or (make install ARCH=armv61/armv71)"
+echo -n "Script is Done."
