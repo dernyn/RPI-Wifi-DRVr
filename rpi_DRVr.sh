@@ -49,7 +49,7 @@ echo "You have to Restart your system after this proccess, if it updated the sys
 echo "If that's the case Do not worry just re-run this script after the reboot. (all is fine) Stop here by pressing Ctrl + C and type sudo reboot."
 echo ""
 sleep 20
-read -p "Ctrl + C to EXIT or any key to continue... " -n 1 -s
+read -p 'Ctrl + C to EXIT or any key to continue... ' -n 1 -s
 sleep 2
 echo ""
 echo ""
