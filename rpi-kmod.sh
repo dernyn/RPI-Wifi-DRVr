@@ -42,7 +42,7 @@ if [ $(uname -m)=="armv61" ]
 then
 echo "This is a Single-Core Proc. , meaning a Raspberry Pi 0/0W/1/1B+/(orig.)2/A+/B+"
 else
-echo "This is a Quad-Core Proc. , meaning a Raspberry Pi 2/3/3B
+echo "This is a Quad-Core Proc. , meaning a Raspberry Pi 2/3/3B"
 fi
 echo "Kernel Release no.: "$(uname -v|cut -b 1-6) $(echo "    pushed: -> ") $(uname -v|cut -b 10-17) $(uname -v|cut -b 30-35)
 echo "(Installed) Kernel hash : "$(vcgencmd version |grep 'version'|echo `cut -b 8-66`)
