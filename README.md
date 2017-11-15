@@ -40,9 +40,11 @@ cd RPI-Wifi-DRVr
 <br>
 sh rpi-kmod.sh
 <br>
-<h1>Obtain your chipset/Manufactures Linux driver</h1>
+<h1>Obtain your Chipset/Manufacture's Linux driver</h1>
 <br>
-Go to the path of your downloaded driver and skip auto-detect by typing either (make ARCH=arm) (make ARCH=armv61) or (make ARCH=armv71)
+try to check compatibility and kernel version requirements.
+<br>
+but mainly go to the path of your extracted .tar/.zip/.rar----etc. downloaded driver and skip auto-detect by typing either (make ARCH=arm) (make ARCH=armv61) or (make ARCH=armv71) , some drivers have the RPI compatibility built-in; for those let it auto-detect the proc. and just type (make)
 <br>
 good luck !
 
