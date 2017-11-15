@@ -30,6 +30,10 @@ if you don't want it installed just get the script from the RPI shell and run it
 <br>
 git clone https://github.com/dernyn/RPI-Wifi-DRVr
 <br>
+sh ./RPI-Wifi-DRVr/rpi-kmod.sh
+<br>
+or
+<br>
 cd RPI-Wifi-DRVr
 <br>
 sh rpi-kmod.sh
