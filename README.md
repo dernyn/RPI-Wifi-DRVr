@@ -1,7 +1,7 @@
 # RPI-Wifi-DRVr
 This script allows an easy way to Install and Compile non-RPI Supported Wi-fi Drivers on the Raspberry PI, Mostly a Kernel header installer script which allows the user to compile kernel Modules like wifi drivers in a fast manner without having to compile the Raspbian Kernel Source.
 <br>
-This Kernel Headers are pre-compiled and are 3rd-party distributed, this installs it and gets you ready to build any kernel module, particularly wifi drivers, but it can be used for any kernel module or driver build with make.
+This Kernel Headers are pre-compiled and are 3rd-party distributed, this installs it and gets you ready to build any kernel module, particularly wifi drivers, but it can be used for any kernel module or driver build with (make) in raspbian (all versions).
 
 <br>
 <h1> Install:</h1>
