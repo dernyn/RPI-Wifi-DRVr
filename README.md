@@ -14,12 +14,14 @@ git clone https://github.com/dernyn/RPI-Wifi-DRVr
 <br>
  rpi-kmod
 <br>
+<br>
 This will run from outside the git clone directory.
 <br>
 <br>
 <h1> Run:</h1>
 <br>
-Just type; rpi-kmod 
+Just type;    rpi-kmod 
+<br>
 --if you installed it, if you don't want it installed just;
 <br>
 Get the script from the RPI shell and run it.
