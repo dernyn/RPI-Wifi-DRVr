@@ -39,4 +39,10 @@ or
 cd RPI-Wifi-DRVr
 <br>
 sh rpi-kmod.sh
+<br>
+<h1>Obtain your chipset/Manufactures Linux driver</h1>
+<br>
+Go to the path of your downloaded driver and skip auto-detect by typing either (make ARCH=arm) (make ARCH=armv61) or (make ARCH=armv71)
+<br>
+good luck !
 
