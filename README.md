@@ -6,7 +6,9 @@ This script allows an easy way to Install and Compile non-RPI Supported Wi-fi Dr
 <br>
 Proper Installion of the script.
 <br>
- $  sudo mv ./rpi-kmod.sh /usr/bin/rpi-kmod
+git clone https://github.com/dernyn/RPI-Wifi-DRVr
+<br>
+ $  sudo mv ./RPI-Wifi-DRVr/rpi-kmod.sh /usr/bin/rpi-kmod
 <br>
  $  sudo chmod +x /usr/bin/rpi-kmod
 <br>
@@ -17,7 +19,8 @@ This will run from outside the git clone.
 <br>
 <h1> Run:</h1>
 <br>
-Getting the script from the RPI shell and running it.
+Just type rpi-kmod --once installed if not, if you dont want it installed just:
+Get the script from the RPI shell and run it.
 <td>
 git clone https://github.com/dernyn/RPI-Wifi-DRVr
 <br>
