@@ -10,7 +10,7 @@
 # $  sudo chmod +x /usr/bin/rpi-kmod
 #  rpi-kmod
 #this will run from outside the git clone.
-
+clear
 echo ""
 echo "RPI-Wifi-DRVr: v1.0"
 echo ""
@@ -34,6 +34,7 @@ sudo apt-get update && sudo apt-get upgrade
 echo ""
 echo ""
 echo ""
+sleep 10
 clear
 echo "Now the hard part.. Updating to the latest Raspbian Kernel version available."
 echo "Your current kernel version is : "`uname -r`
@@ -61,7 +62,8 @@ echo "simply run this script on the single core RPI or vise versa if it was a si
 echo "No harm done, just be aware onto why it happen and why it failed, you have to make the driver for each individual proc. type if you swap SD."
 echo ""
 echo ""
-sleep 35
+echo "rpi-update will start now....."
+sleep 40
 sudo rpi-update
 sleep 10
 echo ""
