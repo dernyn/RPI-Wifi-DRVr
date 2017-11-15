@@ -15,19 +15,20 @@ echo ""
 echo "RPI-Wifi-DRVr: v1.0"
 echo ""
 echo "This script is a quick-fix so that you dont have to compile the whole Raspbian Linux kernel on this very machine;"
-echo "it's a solution for the purpose of installing a kernel driver/build kernel modules, such as a USB Wifi card Driver/etc."
+echo "It's a solution for the purpose of installing a kernel driver/build kernel modules, such as a USB Wifi card Driver/etc."
 echo "the minimalistic Raspbian Image does not include it's source code, or linux headers for make(GCC,CPP) nor 3rd party drivers."
 echo "these pre-compiled headers are not made by me, but enjoy building your own modules and kernel drivers without wasting valuable time."
 echo ""
 sleep 10
-echo "Installing 2 required items for the script...."
+echo "Installing 2 items required for the script...."
 echo ""
 echo ""
 sudo apt-get install -y bc dkms
 echo ""
 echo ""
-sleep 2
-echo "Updating your repository urls and distro packages"
+sleep 4
+clear
+echo "Step 1: Updating your repository urls and distro packages, identifying your Kernel Install."
 echo ""
 echo ""
 sudo apt-get update && sudo apt-get upgrade
@@ -62,7 +63,7 @@ echo "simply run this script on the single core RPI or vise versa if it was a si
 echo "No harm done, just be aware onto why it happen and why it failed, you have to make the driver for each individual proc. type if you swap SD."
 echo ""
 echo ""
-echo "rpi-update will start now....."
+echo "Step 2: (rpi-update) will start now....."
 sleep 40
 sudo rpi-update
 sleep 10
@@ -76,11 +77,7 @@ read -p Ctrl+C\ to\ EXIT\ or\ press\ Enter\ to\ continue A
 sleep 2
 echo ""
 echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
+clear
 echo "Wait a minute or two for the downloading proccess..."
 echo ""
 sleep 5
@@ -88,7 +85,8 @@ sleep 5
 curl $(echo  68747470733A2F2F7777772E6E696B73756C612E6875742E66692F7E6D686969656E6B612F5270692F6C696E75782D686561646572732D7270692F6C696E75782D686561646572732D|xxd -r -p)`uname -r`_`uname -r``echo 2d325f61726d68662e646562|xxd -r -p` -O
 sleep 30
 echo ""
-echo "Installing kernel header packages..."
+clear
+echo "Step 3: Installing the downloaded kernel header package for this revision..."
 echo ""
 echo ""
 sudo dpkg -i linux-headers-`uname -r`_`uname -r``echo 2d325f61726d68662e646562|xxd -r -p`
@@ -102,6 +100,7 @@ sudo ln -s arm armv7l
 sleep 10
 echo ""
 echo "Kernel Headers Installed."
+echo "==========================================================================================================="
 echo ""
 echo "System is Ready...now go find that linux driver for that non-supported Raspberry Pi Wifi Card/etc."
 echo "I.E. I like the RTL8812AU with 5GHZ support ver.5.2 you can get it by-> git clone https://github.com/mk-fg/rtl8812au"
