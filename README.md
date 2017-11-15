@@ -14,7 +14,7 @@ git clone https://github.com/dernyn/RPI-Wifi-DRVr
 <br>
  rpi-kmod
 <br>
-This will run from outside the git clone.
+This will run from outside the git clone directory.
 <br>
 <br>
 <h1> Run:</h1>
