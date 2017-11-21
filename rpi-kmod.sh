@@ -46,7 +46,7 @@ echo "Your current kernel version is : "`uname -r`
 echo "CPU_Architecture : "`arch`
 if [ $(arch)="armv6l" ]
 then
-echo "This is a Single-Core Proc. (armv6l) , meaning a Raspberry Pi 0/0W/1/1B+/(orig.)2/A+/B+"
+echo "This is a Single-Core Proc.(armv6l) ,meaning a Raspberry Pi 0/0W/1/1B+/(orig.)2/A+/B+"
 else
 echo "This is a Quad-Core Proc. (armv7l), meaning a Raspberry Pi 2/3/3B"
 fi
@@ -66,12 +66,13 @@ echo "==========================================================================
 echo ""
 echo "!!!Be aware of the CPU architecture and the kernel version, it varies between"
 echo "Raspberry Pi types/models (i.e.: RPI 0/1/2/3)! --RPI single cores are [armv6l]"
-echo "and the quad cores are [armv7l], each uses different kernel versions when booting"
-echo "Raspbian, if you placed this SD-card on a single core RPI after running this script"
-echo "on a quad core RPI; the wifi driver will not start! due to the change of kernel"
-echo "to fix it run this script on the single core RPI or vise versa if it was a single core"
-echo "originally run it on a quad core. SIMPLE!- No harm done, just be aware onto why it happen"
-echo "to get why it failed, Basically you have to make the driver for each individual proc./kernel"
+echo "and the quad cores are [armv7l], each uses different kernel versions when"
+echo "booting Raspbian, if you placed this SD-card on a single core RPI after running"
+echo "this script on a quad core RPI; the wifi driver will not start! due to the"
+echo "change of kernel to fix it run this script on the single core RPI or vise versa"
+echo "if it was a single core originally run it on a quad core. SIMPLE!- No harm done,"
+echo "just be aware onto why it happen to get why it failed, Basically you have to"
+echo "make the driver for each individual proc./kernel combo."
 echo ""
 echo ""
 echo "Step 2: (rpi-update) will start now....."
@@ -80,9 +81,10 @@ sudo rpi-update
 sleep 10
 echo ""
 echo ""
-echo "If it updated the systems firmware in-anyway, You have to Restart your system after this proccess"
-echo "Remember to re-run this script. Nothing will brake just re-run this script after the reboot."
-echo "to restart the RPI, Stop here by pressing Ctrl + C and type - sudo reboot....on the shell. "
+echo "If it updated the systems firmware in-anyway, You have to Restart your system"
+echo "Remember to re-run this script. Nothing will brake just re-run after the reboot."
+echo "to restart the RPI, quit here by pressing Ctrl + C 
+echo "then type-- sudo reboot  ....on the shell. "
 echo ""
 sleep 20
 read -p Ctrl+C\ to\ EXIT\ or\ press\ Enter\ to\ continue A
