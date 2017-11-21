@@ -31,7 +31,7 @@ echo ""
 echo ""
 sleep 4
 clear
-echo "Step 1: Updating your repository urls and distro packages, identifying your Kernel Install."
+echo "Step 1: Updating your repo URLs and Distro(SRC)packages, Checking Installed Kernel."
 echo ""
 echo ""
 sudo apt-get update --fix-missing && sudo apt-get upgrade
@@ -46,9 +46,9 @@ echo "Your current kernel version is : "`uname -r`
 echo "CPU_Architecture : "`arch`
 case $(arch) in
   armv61)
-echo "This is a Single-Core Proc. (armv61) , meaning a Raspberry Pi 0/0W/1/1B+/(orig.)2/A+/B+"
+echo "This is a Single-Core Proc. (armv61) , meaning a Raspberry Pi 0/0W/1/1B+/(orig.)2/A+/B+";;
   armv71)
-echo "This is a Quad-Core Proc. (armv71), meaning a Raspberry Pi 2/3/3B"
+echo "This is a Quad-Core Proc. (armv71), meaning a Raspberry Pi 2/3/3B";;
 esac
 export web_ver=" "
 export web_ver7=" "
@@ -56,11 +56,11 @@ echo "Kernel Release no.: "$(uname -v|cut -b 1-6) $(echo "    pushed: -> ") $(un
 echo "(Installed) Kernel hash : "$(vcgencmd version |grep 'version'|echo `cut -b 8-66`)
 case $(arch) in
   armv61)
-export web_ver=$(curl -s https://raw.githubusercontent.com/Hexxeh/rpi-firmware/master/uname_string)
-echo "Current release Version : "$(echo $web_ver|cut -b 14-22)$(echo $web_ver|cut -b 111-116) $(echo " (Available)  | You're on: "`uname -r`) $(echo "  "`uname -v|cut -b 1-6`)
+export web_ver=$(curl -s https://raw.githubusercontent.com/Hexxeh/rpi-firmware/master/uname_string);;
+echo "Current release Version : "$(echo $web_ver|cut -b 14-22)$(echo $web_ver|cut -b 111-116) $(echo " (Available)  | You're on: "`uname -r`) $(echo "  "`uname -v|cut -b 1-6`);;
   armv71)
-export web_ver7=$(curl -s https://raw.githubusercontent.com/Hexxeh/rpi-firmware/master/uname_string7)
-echo "Current release Version : "$(echo $web_ver7|cut -b 14-25)$(echo $web_ver7|cut -b 114-120) $(echo " (Available)  | You're on: "`uname -r`) $(echo "  "`uname -v|cut -b 1-6`)
+export web_ver7=$(curl -s https://raw.githubusercontent.com/Hexxeh/rpi-firmware/master/uname_string7);;
+echo "Current release Version : "$(echo $web_ver7|cut -b 14-25)$(echo $web_ver7|cut -b 114-120) $(echo " (Available)  | You're on: "`uname -r`) $(echo "  "`uname -v|cut -b 1-6`);;
 esac
 echo ""
 echo ""
