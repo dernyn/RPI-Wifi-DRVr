@@ -1,5 +1,5 @@
 # RPI-Wifi-DRVr
-This script allows an easy way to Install and Compile non-Included Wi-fi Drivers on any Raspberry PI (RPI), It's Mostly a Kernel header installer script which allows the user to compile kernel Modules, specially wifi drivers in a fast manner without having to compile the Raspbian Kernel Source after every firmware release/kernel update.
+This script allows an easy way to Install and Compile non-Raspbian-Included Wi-fi Drivers on any Raspberry PI (RPI), It's Mostly a Kernel header installer script which allows the user to compile kernel Modules, made specially for wifi drivers to install in a fast manner without having to compile the Raspbian Kernel Source after every firmware release/kernel update.
 <br>
 This Kernel Headers are pre-compiled and are 3rd-party distributed, this installs it and gets you ready to build any kernel module, particularly wifi drivers, but it can be used for any kernel module or driver build with (make) in raspbian (all versions).
 
@@ -44,7 +44,7 @@ sh rpi-kmod.sh
 <br>
 try to check compatibility and kernel version requirements.
 <br>
-but mainly go to the path of your extracted .tar/.zip/.rar----etc. downloaded driver and skip auto-detect by typing either (make ARCH=arm) (make ARCH=armv61) or (make ARCH=armv71) , some drivers have the RPI compatibility built-in; for those let it auto-detect the proc. and just type (make)
+but mainly go to the path of your extracted .tar/.zip/.rar----etc. downloaded driver and skip auto-detect by typing either (make ARCH=arm) (make ARCH=$(arch) (make ARCH=armv6l) or (make ARCH=armv7l) , some drivers have the RPI compatibility built-in; for those let it auto-detect the proc. and just type (make)
 <br>
 good luck !
 
