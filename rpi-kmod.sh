@@ -44,17 +44,17 @@ echo "Now, the hard part.. Updating to the latest Raspbian Kernel version availa
 echo "=============================================================================="
 echo "Your current kernel version is : "`uname -r`
 echo "CPU_Architecture : "`arch`
-if [ $(arch)="armv61" ]
+if [ $(arch)="armv6l" ]
 then
-echo "This is a Single-Core Proc. (armv61) , meaning a Raspberry Pi 0/0W/1/1B+/(orig.)2/A+/B+"
+echo "This is a Single-Core Proc. (armv6l) , meaning a Raspberry Pi 0/0W/1/1B+/(orig.)2/A+/B+"
 else
-echo "This is a Quad-Core Proc. (armv71), meaning a Raspberry Pi 2/3/3B"
+echo "This is a Quad-Core Proc. (armv7l), meaning a Raspberry Pi 2/3/3B"
 fi
 export web_ver=" "
 export web_ver7=" "
 echo "Kernel Release no.: "$(uname -v|cut -b 1-6) $(echo "    pushed: -> ") $(uname -v|cut -b 10-17) $(uname -v|cut -b 30-35)
 echo "(Installed) Kernel hash : "$(vcgencmd version |grep 'version'|echo `cut -b 8-66`)
-if [ $(arch)="armv61" ]
+if [ $(arch)="armv6l" ]
 then
 export web_ver=$(curl -s https://raw.githubusercontent.com/Hexxeh/rpi-firmware/master/uname_string)
 echo "Current release Version : "$(echo $web_ver|cut -b 14-22)$(echo $web_ver|cut -b 111-116) $(echo " (Available)  | You're on: "`uname -r`) $(echo "  "`uname -v|cut -b 1-6`)
@@ -65,8 +65,8 @@ fi
 echo "============================================================================"
 echo ""
 echo "!!!Be aware of the CPU architecture and the kernel version, it varies between"
-echo "Raspberry Pi types/models (i.e.: RPI 0/1/2/3)! --RPI single cores are [armv61]"
-echo "and the quad cores are [armv71], each uses different kernel versions when booting"
+echo "Raspberry Pi types/models (i.e.: RPI 0/1/2/3)! --RPI single cores are [armv6l]"
+echo "and the quad cores are [armv7l], each uses different kernel versions when booting"
 echo "Raspbian, if you placed this SD-card on a single core RPI after running this script"
 echo "on a quad core RPI; the wifi driver will not start! due to the change of kernel"
 echo "to fix it run this script on the single core RPI or vise versa if it was a single core"
@@ -106,9 +106,9 @@ echo ""
 echo "Adding minor changes to avoid error prompts from make..."
 cd /usr/src/linux-headers-$(uname -r)/arch
 sleep 20
-sudo ln -s arm armv61
+sudo ln -s arm armv6l
 sleep 10
-sudo ln -s arm armv71
+sudo ln -s arm armv7l
 sleep 10
 echo ""
 clear
@@ -125,10 +125,10 @@ echo "but to avoid conflict or errors with make try this..."
 echo ""
 echo "Go to the path of your downloaded driver I.E."
 echo "cd rtl8812au"
-echo "skip the auto-detect by typing either (make ARCH=arm) (make ARCH=armv61) or (make ARCH=armv71)"
+echo "skip the auto-detect by typing either (make ARCH=arm) (make ARCH=armv6l) or (make ARCH=armv7l)"
 echo "depending on proc. if you forgot your proc. then ---------- make ARCH=$(arch) ,this works too." 
 echo ""
-echo "To perform the installation type (make install ARCH=arm) or (make install ARCH=armv61/armv71)"
+echo "To perform the installation type (make install ARCH=arm) or (make install ARCH=armv6l/armv7l)"
 echo " make install ARCH=$(arm) , also works"
 echo ""
 echo "-------------------------------------------------------------------------------------------------"
