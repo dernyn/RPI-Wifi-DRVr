@@ -44,7 +44,17 @@ sh rpi-kmod.sh
 <br>
 try to check compatibility and kernel version requirements.
 <br>
-but mainly go to the path of your extracted .tar/.zip/.rar----etc. downloaded driver and skip auto-detect by typing either (make ARCH=arm) ( make ARCH=$(arch) ) (make ARCH=armv6l) or (make ARCH=armv7l) , some drivers have the RPI compatibility built-in; for those let it auto-detect the proc. and just type (make)
+but mainly go to the path of your extracted .tar/.zip/.rar----etc. downloaded driver and skip auto-detect by typing either
+<br>
+make ARCH=arm
+<br>
+make ARCH=$(arch)
+<br>
+make ARCH=armv6l 
+<br>
+make ARCH=armv7l
+<br>
+some drivers have the RPI compatibility built-in; for those let it auto-detect the proc. and just type (make)
 <br>
 good luck !
 
