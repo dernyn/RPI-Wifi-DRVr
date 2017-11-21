@@ -75,15 +75,18 @@ echo "just be aware onto why it happen to get why it failed, Basically you have 
 echo "make the driver for each individual proc./kernel combo."
 echo ""
 echo ""
+echo ""
+echo ""
 echo "Step 2: (rpi-update) will start now....."
+echo ""
 sleep 40
 sudo rpi-update
-sleep 10
+sleep 7
 echo ""
 echo ""
 echo "If it updated the systems firmware in-anyway, You have to Restart your system"
 echo "Remember to re-run this script. Nothing will brake just re-run after the reboot."
-echo "to restart the RPI, quit here by pressing Ctrl + C 
+echo "to restart the RPI, quit here by pressing Ctrl + C"
 echo "then type-- sudo reboot  ....on the shell. "
 echo ""
 sleep 20
@@ -114,9 +117,9 @@ sudo ln -s arm armv7l
 sleep 10
 echo ""
 clear
-echo "================================================================================================="
-echo "                                     Kernel Headers Installed.                                   "
-echo "================================================================================================="
+echo "============================================================================="
+echo "                         Kernel Headers Installed.                           "
+echo "============================================================================="
 echo ""
 echo "System is Ready...now go find that linux driver for that non-raspbian-included Wifi Card/etc."
 echo "I.E. I like the RTL8812AU with 5GHZ support ver.5.2.9 ...."
@@ -133,12 +136,12 @@ echo ""
 echo "To perform the installation type (make install ARCH=arm) or (make install ARCH=armv6l/armv7l)"
 echo " make install ARCH=$(arm) , also works"
 echo ""
-echo "-------------------------------------------------------------------------------------------------"
+echo "----------------------------------------------------------------------------"
 echo "To install the driver without the make command, type:"
 echo "$ sudo cp 8812au.ko /lib/modules/`uname -r`/kernel/drivers/net/wireless"
 echo "$ sudo depmod -a"
 echo "$ sudo modprobe 8812au"
-echo "-------------------------------------------------------------------------------------------------"
+echo "----------------------------------------------------------------------------"
 echo "now you can restart if you like...., or continue with the dkms install procedures, if you want!"
 echo "but...the wifi should be already working! if you had no errors"
 echo ""
