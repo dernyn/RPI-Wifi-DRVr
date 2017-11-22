@@ -43,7 +43,7 @@ echo "Now, the hard part..Updating to the latest Raspbian Kernel version availab
 echo "============================================================================="
 echo "Your current kernel version is : "`uname -r`
 echo "CPU_Architecture : "`arch`
-if [ $(arch)="armv6l" ]; then
+if [ $(arch) = "armv6l" ]; then
 echo "This is a Single-Core Proc.(armv6l) ,meaning a Raspberry Pi 0/0W/1/1B+/(orig.)2/A+/B+"
 echo "Kernel Release no.: "$(uname -v|cut -b 1-6) $(echo "    pushed: -> ") $(uname -v|cut -b 10-17) $(uname -v|cut -b 30-35)
 else
@@ -53,12 +53,12 @@ fi
 web_ver=" "
 web_ver7=" "
 echo "(Installed) Kernel hash : "$(vcgencmd version |grep 'version'|echo `cut -b 8-66`)
-if [ $(arch)="armv6l" ]; then
+if [ $(arch) = "armv6l" ]; then
 web_ver=$(curl -s https://raw.githubusercontent.com/Hexxeh/rpi-firmware/master/uname_string)
-echo "Current release Version : "$(echo $web_ver|cut -b 14-22)$(echo $web_ver|cut -b 111-116) $(echo " (Available)  | You're on: "`uname -r`) $(echo "  "`uname -v|cut -b 1-6`)
+echo "Current web release : "$(echo $web_ver|cut -b 14-22)$(echo $web_ver|cut -b 111-116) $(echo " (Available)  | You're on: "`uname -r`) $(echo "  "`uname -v|cut -b 1-6`)
 else
 web_ver7=$(curl -s https://raw.githubusercontent.com/Hexxeh/rpi-firmware/master/uname_string7)
-echo "Current release Version : "$(echo $web_ver7|cut -b 14-25)$(echo $web_ver7|cut -b 114-120) $(echo " (Available)  | You're on: "`uname -r`) $(echo "  "`uname -v|cut -b 1-6`)
+echo "Current web release : "$(echo $web_ver7|cut -b 14-25)$(echo $web_ver7|cut -b 114-120) $(echo " (Available)  | You're on: "`uname -r`) $(echo "  "`uname -v|cut -b 1-6`)
 fi
 echo "============================================================================"
 echo ""
