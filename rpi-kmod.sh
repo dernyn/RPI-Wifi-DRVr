@@ -25,13 +25,12 @@ echo ""
 sleep 8
 echo "Installing two pre-required items for the script....(bc,dkms)"
 echo ""
-echo ""
 sudo apt-get install -y bc dkms
 echo ""
 echo ""
 sleep 4
 clear
-echo "Step 1: Updating your repo URLs and Distro(SRC)packages, Checking Installed Kernel."
+echo "Step 1: Updating your repo,URLs,Distro(dep)packages, Query Installed Kernel."
 echo ""
 echo ""
 sudo apt-get update --fix-missing && sudo apt-get upgrade
@@ -40,8 +39,8 @@ echo ""
 echo ""
 sleep 10
 clear
-echo "Now, the hard part.. Updating to the latest Raspbian Kernel version available."
-echo "=============================================================================="
+echo "Now, the hard part..Updating to the latest Raspbian Kernel version available."
+echo "============================================================================="
 echo "Your current kernel version is : "`uname -r`
 echo "CPU_Architecture : "`arch`
 if [ $(arch)="armv6l" ]
@@ -74,9 +73,6 @@ echo "if it was a single core originally run it on a quad core. SIMPLE!- No harm
 echo "just be aware onto why it happen to get why it failed, Basically you have to"
 echo "make the driver for each individual proc./kernel combo."
 echo ""
-echo ""
-echo ""
-echo ""
 echo "Step 2: (rpi-update) will start now....."
 echo ""
 sleep 40
@@ -95,7 +91,7 @@ sleep 2
 echo ""
 echo ""
 clear
-echo "Wait a minute or two for the downloading proccess..."
+echo "Downloading Install package..."
 echo ""
 sleep 5
 # downloading your current kernel headers
@@ -121,28 +117,32 @@ echo "==========================================================================
 echo "                         Kernel Headers Installed.                           "
 echo "============================================================================="
 echo ""
-echo "System is Ready...now go find that linux driver for that non-raspbian-included Wifi Card/etc."
-echo "I.E. I like the RTL8812AU with 5GHZ support ver.5.2.9 ...."
-echo "git clone https://github.com/dernyn/rtl8812au""
+echo "System is Ready...now go find that linux driver for that non-raspbian-included,"
+echo "Wifi Card/device etc, I.E. I like the RTL8812AU with 5GHZ support (ver.5.2.9).."
+echo "git clone https://github.com/dernyn/rtl8812au"
 echo ""
-echo "Some drivers have been setup to detect the proc. arch.(within the Makefile), by just typing (make)"
-echo "but to avoid conflict or errors with make try this..."
+echo "Some drivers have been setup to detect the proc. arch.(within the Makefile)"
+echo "by just typing (make) but to avoid conflict or errors with (make) try this."
 echo ""
 echo "Go to the path of your downloaded driver I.E."
 echo "cd rtl8812au"
-echo "skip the auto-detect by typing either (make ARCH=arm) (make ARCH=armv6l) or (make ARCH=armv7l)"
-echo "depending on proc. if you forgot your proc. then ---------- make ARCH=$(arch) ,this works too." 
+echo "to skip the auto-detect by typing either:"
+echo "(make ARCH=arm) (make ARCH=armv6l) or (make ARCH=armv7l)"
+echo "depending on proc. if you forgot your proc. then"
+echo "-- make ARCH=$(arch) ,this works too." 
 echo ""
-echo "To perform the installation type (make install ARCH=arm) or (make install ARCH=armv6l/armv7l)"
+echo "To perform the installation type:"
+echo "(make install ARCH=arm) or (make install ARCH=armv6l/armv7l)"
 echo " make install ARCH=$(arm) , also works"
 echo ""
-echo "----------------------------------------------------------------------------"
+echo "--------------------------------------------------------------------------"
 echo "To install the driver without the make command, type:"
 echo "$ sudo cp 8812au.ko /lib/modules/`uname -r`/kernel/drivers/net/wireless"
 echo "$ sudo depmod -a"
 echo "$ sudo modprobe 8812au"
-echo "----------------------------------------------------------------------------"
-echo "now you can restart if you like...., or continue with the dkms install procedures, if you want!"
+echo "--------------------------------------------------------------------------"
+echo "now you can restart if you like...."
+echo "or continue with the DKMS install procedures, if you want!"
 echo "but...the wifi should be already working! if you had no errors"
 echo ""
 echo "Script is Complete."
