@@ -73,11 +73,13 @@ echo "if it was a single core originally run it on a quad core. SIMPLE!- No harm
 echo "just be aware onto why it happen to get why it failed, Basically you have to"
 echo "make the driver for each individual proc./kernel combo."
 echo ""
+echo ""
+sleep 35
+clear
 echo "Step 2: (rpi-update) will start now....."
 echo ""
-sleep 40
+sleep 3
 sudo rpi-update
-sleep 7
 echo ""
 echo ""
 echo "If it updated the systems firmware in-anyway, You have to Restart your system"
@@ -85,7 +87,7 @@ echo "Remember to re-run this script. Nothing will brake just re-run after the r
 echo "to restart the RPI, quit here by pressing Ctrl + C"
 echo "then type-- sudo reboot  ....on the shell. "
 echo ""
-sleep 20
+sleep 10
 read -p Ctrl+C\ to\ EXIT\ or\ press\ Enter\ to\ continue A
 sleep 2
 echo ""
@@ -93,8 +95,8 @@ echo ""
 clear
 echo "Downloading Install package..."
 echo ""
-sleep 5
-# downloading your current kernel headers
+sleep 3
+# downloading needed kernel headers
 curl $(echo  68747470733A2F2F7777772E6E696B73756C612E6875742E66692F7E6D686969656E6B612F5270692F6C696E75782D686561646572732D7270692F6C696E75782D686561646572732D|xxd -r -p)`uname -r`_`uname -r``echo 2d325f61726d68662e646562|xxd -r -p` -O
 sleep 30
 echo ""
