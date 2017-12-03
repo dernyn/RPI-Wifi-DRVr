@@ -14,6 +14,7 @@ not only did I find a 300 Mbps USB wifi dongle that was never claimed compatible
 <br>
 
 ![GitHub hrw](https://i.imgur.com/xMAoTsj.jpg)
+![GitHub hrw2](https://i.imgur.com/DY8ngYf.png)
 
 <h1> Install:</h1>
 <br>
