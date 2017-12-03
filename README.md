@@ -12,7 +12,9 @@ Damm! is right!...
 My fix was to get any off-the-shelf USB Wifi dongle which is Linux Compatible and Install the linux driver in the Raspbian ARM emviroment with the foundation of this script.
 not only did I find a 300 Mbps USB wifi dongle that was never claimed compatible with the Raspberry Pi as some brands do, yet I made it work, but there is more I made a 802.11AC 5 GHZ USB 3.0 (backwards compatible USB 2.0) dongle work in 3 easy steps by running this script. Wireless-AC broadband speeds on a Raspberry Pi !...Yes!  Enjoy !
 <br>
-![GitHub logo](https://github.com/dernyn/RPI-Wifi-DRVr/blob/master/hardware_5ghz.jpg)
+
+![GitHub hrw](https://github.com/dernyn/RPI-Wifi-DRVr/blob/master/hardware_5ghz.jpg)
+
 <h1> Install:</h1>
 <br>
 Proper Installion of the script.
