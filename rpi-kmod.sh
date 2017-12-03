@@ -33,7 +33,8 @@ clear
 echo "Step 1: Updating your repo,URLs,Distro(dep)packages, Query Installed Kernel."
 echo ""
 echo ""
-sudo apt-get update -y --fix-missing && sudo apt-get upgrade -y
+sudo apt-get update -y --fix-missing
+sudo apt-get update -y & sudo apt-get upgrade -y
 echo ""
 echo ""
 echo ""
