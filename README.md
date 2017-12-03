@@ -7,6 +7,7 @@ This Kernel Headers are pre-compiled and are 3rd-party distributed, this install
 <h1>Why?</h1>
 So, you have a nifty Raspberry Pi 3 Model B and or the Raspberry Pi Zero W , and you feel like -- man it comes with wifi and it's 802.11n, Yes and yes but don't fool yourself it uses the Broadcom BCM43438 chip, this chip is an 802.11(n)-- but it does not provide 300 Mbps Wireless-N broadband speeds, it's limited to ( single channel mode ) of only 20 MHZ which is 130-150 Mbps rated range, and not the well loved ( 802.11n channel bonding mode ) which operates at 40 MHz on 300 Mbps rated range.
 <br>
+<br>
 Damm! is right!...
 My fix was to get any off-the-shelf USB Wifi dongle which is Linux Compatible and Install the linux driver in the Raspbian ARM emviroment with the foundation of this script.
 not only did I find a 300 Mbps USB wifi dongle that was never claimed compatible with the Raspberry Pi as some brands do, yet I made it work, but there is more I made a 802.11AC 5 GHZ USB 3.0 (backwards compatible USB 2.0) dongle work in 3 easy steps by running this script. Enjoy !
