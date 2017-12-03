@@ -1,5 +1,5 @@
 # RPI-Wifi-DRVr
-This script allows an easy way to Install and Compile non-Raspbian-Included Wi-fi Drivers on any Raspberry PI (RPI), It's Mostly a Kernel header installer script which allows the user to compile kernel Modules, made specially for wifi drivers to install in a fast manner without having to compile the Raspbian Kernel Source after every firmware release/kernel update (rpi-update).
+This script allows an easy way to Install and Compile non-Raspbian-Included Wi-fi Drivers on any Raspberry PI (RPI), It's Mostly a Kernel header installer script which allows the user to compile kernel Modules, made specially for wifi drivers to install in a fast manner without having to compile the Raspbian Kernel Source after every firmware release/kernel update (rpi-update). 3 easy steps !
 <br>
 This Kernel Headers are pre-compiled and are 3rd-party distributed, this installs it and gets you ready to build any kernel module, particularly wifi drivers, but it can be used for any kernel module or driver build with (make) in raspbian (all versions).
 
@@ -9,7 +9,7 @@ So, you have a nifty Raspberry Pi 3 Model B and or the Raspberry Pi Zero W , and
 <br>
 Damm! is right!...
 My fix was to get any off-the-shelf USB Wifi dongle which is Linux Compatible and Install the linux driver in the Raspbian ARM emviroment with the foundation of this script.
-not only did I find a 300 Mbps USB wifi dongle that was never claimed comapatible with the Raspberry Pi and made it work, but I made a 802.11AC 5 GHZ USB3 (backwards compatible USB 2) dongle work in 3 easy steps.
+not only did I find a 300 Mbps USB wifi dongle that was never claimed compatible with the Raspberry Pi as some brands do, yet I made it work, but there is more I made a 802.11AC 5 GHZ USB 3.0 (backwards compatible USB 2.0) dongle work in 3 easy steps by running this script. Enjoy !
 <br>
 <h1> Install:</h1>
 <br>
