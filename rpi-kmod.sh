@@ -25,6 +25,7 @@ echo ""
 sleep 8
 echo "Installing two pre-required items for the script....(bc,dkms)"
 echo ""
+sudo apt-get autoclean -y
 sudo apt-get install -y bc dkms
 echo ""
 echo ""
