@@ -47,7 +47,7 @@ cd RPI-Wifi-DRVr
 <br>
 sh rpi-kmod.sh
 <br>
-<h1>Find your Wifi(other device) Chipset/Manufacture's Linux driver</h1>
+<h1>Find your Wifi(or other device) Chipset/Manufacture's Linux driver</h1>
 <br>
 try to check compatibility and kernel version requirements.
 <br>
