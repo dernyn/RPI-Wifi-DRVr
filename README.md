@@ -4,7 +4,7 @@ This script allows an easy way to Install and Compile non-Raspbian-Included Wi-f
 This Kernel Headers are pre-compiled and are 3rd-party distributed, this installs it and gets you ready to build any kernel module, particularly wifi drivers, but it can be used for any arm/armv6l/armv7l kernel module or driver build with (make) in raspbian (all versions).
 
 <br>
-<h1>Why?----Bitrates,HT20/HT40,5Ghz</h1>
+<h1>Why?---- Bitrates,HT20/HT40,5Ghz,monitor-mode</h1>
 So, you have a nifty Raspberry Pi 3 Model B and or the Raspberry Pi Zero W , and you feel like -- man it comes with wifi and it's 802.11n, Yes and yes but don't fool yourself it uses the Broadcom BCM43438 chip, this chip is an 802.11(n)-- but it does not provide 300 Mbps Wireless-N broadband speeds, it's limited to ( single channel mode ) of only 20 MHZ which is 130-150 Mbps rated range, and not the well loved ( 802.11n channel bonding mode ) which operates at 40 MHz on 300 Mbps rated range.
 <br>
 <br>
